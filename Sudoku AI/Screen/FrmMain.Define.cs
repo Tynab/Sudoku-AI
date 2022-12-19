@@ -1,15 +1,11 @@
-﻿using System.Windows.Forms;
-using YANF.Control;
+﻿using YANF.Control;
 using static Sudoku_AI.Script.Constant;
 
 namespace Sudoku_AI.Screen
 {
     public partial class FrmMain
     {
-        private void InitItems()
-        {
-            InitTxtCells();
-        }
+        private void InitItems() => InitTxtCells();
 
         #region Txt
         private YANTxt[,] _txtCells;
