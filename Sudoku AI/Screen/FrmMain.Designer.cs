@@ -118,6 +118,7 @@
             this.txtCell86 = new YANF.Control.YANTxt();
             this.txtCell76 = new YANF.Control.YANTxt();
             this.txtCell66 = new YANF.Control.YANTxt();
+            this.btnCalc = new YANF.Control.YANBtn();
             this.pnlArea00.SuspendLayout();
             this.pnlArea01.SuspendLayout();
             this.pnlArea02.SuspendLayout();
@@ -214,7 +215,7 @@
             this.txtCell12.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell12.PlaceholderText = null;
             this.txtCell12.Size = new System.Drawing.Size(49, 47);
-            this.txtCell12.String = "";
+            this.txtCell12.String = "8";
             this.txtCell12.TabIndex = 6;
             this.txtCell12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell12.UnderlinedStyle = false;
@@ -262,7 +263,7 @@
             this.txtCell21.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell21.PlaceholderText = null;
             this.txtCell21.Size = new System.Drawing.Size(49, 47);
-            this.txtCell21.String = "";
+            this.txtCell21.String = "5";
             this.txtCell21.TabIndex = 8;
             this.txtCell21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell21.UnderlinedStyle = false;
@@ -286,7 +287,7 @@
             this.txtCell11.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell11.PlaceholderText = null;
             this.txtCell11.Size = new System.Drawing.Size(49, 47);
-            this.txtCell11.String = "";
+            this.txtCell11.String = "3";
             this.txtCell11.TabIndex = 5;
             this.txtCell11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell11.UnderlinedStyle = false;
@@ -334,7 +335,7 @@
             this.txtCell20.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell20.PlaceholderText = null;
             this.txtCell20.Size = new System.Drawing.Size(49, 47);
-            this.txtCell20.String = "";
+            this.txtCell20.String = "9";
             this.txtCell20.TabIndex = 7;
             this.txtCell20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell20.UnderlinedStyle = false;
@@ -424,7 +425,7 @@
             this.txtCell15.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell15.PlaceholderText = null;
             this.txtCell15.Size = new System.Drawing.Size(49, 47);
-            this.txtCell15.String = "";
+            this.txtCell15.String = "6";
             this.txtCell15.TabIndex = 6;
             this.txtCell15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell15.UnderlinedStyle = false;
@@ -592,7 +593,7 @@
             this.txtCell03.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell03.PlaceholderText = null;
             this.txtCell03.Size = new System.Drawing.Size(49, 47);
-            this.txtCell03.String = "";
+            this.txtCell03.String = "4";
             this.txtCell03.TabIndex = 1;
             this.txtCell03.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell03.UnderlinedStyle = false;
@@ -634,7 +635,7 @@
             this.txtCell28.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell28.PlaceholderText = null;
             this.txtCell28.Size = new System.Drawing.Size(49, 47);
-            this.txtCell28.String = "";
+            this.txtCell28.String = "2";
             this.txtCell28.TabIndex = 9;
             this.txtCell28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell28.UnderlinedStyle = false;
@@ -682,7 +683,7 @@
             this.txtCell08.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell08.PlaceholderText = null;
             this.txtCell08.Size = new System.Drawing.Size(49, 47);
-            this.txtCell08.String = "";
+            this.txtCell08.String = "9";
             this.txtCell08.TabIndex = 3;
             this.txtCell08.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell08.UnderlinedStyle = false;
@@ -778,7 +779,7 @@
             this.txtCell26.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell26.PlaceholderText = null;
             this.txtCell26.Size = new System.Drawing.Size(49, 47);
-            this.txtCell26.String = "";
+            this.txtCell26.String = "6";
             this.txtCell26.TabIndex = 7;
             this.txtCell26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell26.UnderlinedStyle = false;
@@ -802,7 +803,7 @@
             this.txtCell16.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell16.PlaceholderText = null;
             this.txtCell16.Size = new System.Drawing.Size(49, 47);
-            this.txtCell16.String = "";
+            this.txtCell16.String = "7";
             this.txtCell16.TabIndex = 4;
             this.txtCell16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell16.UnderlinedStyle = false;
@@ -916,7 +917,7 @@
             this.txtCell32.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell32.PlaceholderText = null;
             this.txtCell32.Size = new System.Drawing.Size(49, 47);
-            this.txtCell32.String = "";
+            this.txtCell32.String = "3";
             this.txtCell32.TabIndex = 3;
             this.txtCell32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell32.UnderlinedStyle = false;
@@ -940,7 +941,7 @@
             this.txtCell51.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell51.PlaceholderText = null;
             this.txtCell51.Size = new System.Drawing.Size(49, 47);
-            this.txtCell51.String = "";
+            this.txtCell51.String = "9";
             this.txtCell51.TabIndex = 8;
             this.txtCell51.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell51.UnderlinedStyle = false;
@@ -988,7 +989,7 @@
             this.txtCell31.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell31.PlaceholderText = null;
             this.txtCell31.Size = new System.Drawing.Size(49, 47);
-            this.txtCell31.String = "";
+            this.txtCell31.String = "1";
             this.txtCell31.TabIndex = 2;
             this.txtCell31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell31.UnderlinedStyle = false;
@@ -1012,7 +1013,7 @@
             this.txtCell50.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell50.PlaceholderText = null;
             this.txtCell50.Size = new System.Drawing.Size(49, 47);
-            this.txtCell50.String = "";
+            this.txtCell50.String = "7";
             this.txtCell50.TabIndex = 7;
             this.txtCell50.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell50.UnderlinedStyle = false;
@@ -1060,7 +1061,7 @@
             this.txtCell30.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell30.PlaceholderText = null;
             this.txtCell30.Size = new System.Drawing.Size(49, 47);
-            this.txtCell30.String = "";
+            this.txtCell30.String = "2";
             this.txtCell30.TabIndex = 1;
             this.txtCell30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell30.UnderlinedStyle = false;
@@ -1102,7 +1103,7 @@
             this.txtCell55.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell55.PlaceholderText = null;
             this.txtCell55.Size = new System.Drawing.Size(49, 47);
-            this.txtCell55.String = "";
+            this.txtCell55.String = "4";
             this.txtCell55.TabIndex = 9;
             this.txtCell55.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell55.UnderlinedStyle = false;
@@ -1150,7 +1151,7 @@
             this.txtCell35.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell35.PlaceholderText = null;
             this.txtCell35.Size = new System.Drawing.Size(49, 47);
-            this.txtCell35.String = "";
+            this.txtCell35.String = "5";
             this.txtCell35.TabIndex = 3;
             this.txtCell35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell35.UnderlinedStyle = false;
@@ -1174,7 +1175,7 @@
             this.txtCell54.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell54.PlaceholderText = null;
             this.txtCell54.Size = new System.Drawing.Size(49, 47);
-            this.txtCell54.String = "";
+            this.txtCell54.String = "6";
             this.txtCell54.TabIndex = 8;
             this.txtCell54.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell54.UnderlinedStyle = false;
@@ -1222,7 +1223,7 @@
             this.txtCell34.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell34.PlaceholderText = null;
             this.txtCell34.Size = new System.Drawing.Size(49, 47);
-            this.txtCell34.String = "";
+            this.txtCell34.String = "9";
             this.txtCell34.TabIndex = 2;
             this.txtCell34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell34.UnderlinedStyle = false;
@@ -1246,7 +1247,7 @@
             this.txtCell53.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell53.PlaceholderText = null;
             this.txtCell53.Size = new System.Drawing.Size(49, 47);
-            this.txtCell53.String = "";
+            this.txtCell53.String = "3";
             this.txtCell53.TabIndex = 7;
             this.txtCell53.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell53.UnderlinedStyle = false;
@@ -1270,7 +1271,7 @@
             this.txtCell43.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell43.PlaceholderText = null;
             this.txtCell43.Size = new System.Drawing.Size(49, 47);
-            this.txtCell43.String = "";
+            this.txtCell43.String = "2";
             this.txtCell43.TabIndex = 4;
             this.txtCell43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell43.UnderlinedStyle = false;
@@ -1336,7 +1337,7 @@
             this.txtCell58.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell58.PlaceholderText = null;
             this.txtCell58.Size = new System.Drawing.Size(49, 47);
-            this.txtCell58.String = "";
+            this.txtCell58.String = "1";
             this.txtCell58.TabIndex = 9;
             this.txtCell58.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell58.UnderlinedStyle = false;
@@ -1360,7 +1361,7 @@
             this.txtCell48.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell48.PlaceholderText = null;
             this.txtCell48.Size = new System.Drawing.Size(49, 47);
-            this.txtCell48.String = "";
+            this.txtCell48.String = "3";
             this.txtCell48.TabIndex = 6;
             this.txtCell48.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell48.UnderlinedStyle = false;
@@ -1384,7 +1385,7 @@
             this.txtCell38.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell38.PlaceholderText = null;
             this.txtCell38.Size = new System.Drawing.Size(49, 47);
-            this.txtCell38.String = "";
+            this.txtCell38.String = "6";
             this.txtCell38.TabIndex = 3;
             this.txtCell38.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell38.UnderlinedStyle = false;
@@ -1408,7 +1409,7 @@
             this.txtCell57.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell57.PlaceholderText = null;
             this.txtCell57.Size = new System.Drawing.Size(49, 47);
-            this.txtCell57.String = "";
+            this.txtCell57.String = "8";
             this.txtCell57.TabIndex = 8;
             this.txtCell57.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell57.UnderlinedStyle = false;
@@ -1432,7 +1433,7 @@
             this.txtCell47.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell47.PlaceholderText = null;
             this.txtCell47.Size = new System.Drawing.Size(49, 47);
-            this.txtCell47.String = "";
+            this.txtCell47.String = "5";
             this.txtCell47.TabIndex = 5;
             this.txtCell47.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell47.UnderlinedStyle = false;
@@ -1456,7 +1457,7 @@
             this.txtCell37.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell37.PlaceholderText = null;
             this.txtCell37.Size = new System.Drawing.Size(49, 47);
-            this.txtCell37.String = "";
+            this.txtCell37.String = "7";
             this.txtCell37.TabIndex = 2;
             this.txtCell37.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell37.UnderlinedStyle = false;
@@ -1594,7 +1595,7 @@
             this.txtCell72.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell72.PlaceholderText = null;
             this.txtCell72.Size = new System.Drawing.Size(49, 47);
-            this.txtCell72.String = "";
+            this.txtCell72.String = "9";
             this.txtCell72.TabIndex = 6;
             this.txtCell72.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell72.UnderlinedStyle = false;
@@ -1666,7 +1667,7 @@
             this.txtCell71.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell71.PlaceholderText = null;
             this.txtCell71.Size = new System.Drawing.Size(49, 47);
-            this.txtCell71.String = "";
+            this.txtCell71.String = "2";
             this.txtCell71.TabIndex = 5;
             this.txtCell71.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell71.UnderlinedStyle = false;
@@ -1714,7 +1715,7 @@
             this.txtCell80.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell80.PlaceholderText = null;
             this.txtCell80.Size = new System.Drawing.Size(49, 47);
-            this.txtCell80.String = "";
+            this.txtCell80.String = "8";
             this.txtCell80.TabIndex = 7;
             this.txtCell80.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell80.UnderlinedStyle = false;
@@ -1852,7 +1853,7 @@
             this.txtCell65.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell65.PlaceholderText = null;
             this.txtCell65.Size = new System.Drawing.Size(49, 47);
-            this.txtCell65.String = "";
+            this.txtCell65.String = "9";
             this.txtCell65.TabIndex = 3;
             this.txtCell65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell65.UnderlinedStyle = false;
@@ -1900,7 +1901,7 @@
             this.txtCell74.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell74.PlaceholderText = null;
             this.txtCell74.Size = new System.Drawing.Size(49, 47);
-            this.txtCell74.String = "";
+            this.txtCell74.String = "4";
             this.txtCell74.TabIndex = 5;
             this.txtCell74.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell74.UnderlinedStyle = false;
@@ -1924,7 +1925,7 @@
             this.txtCell64.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell64.PlaceholderText = null;
             this.txtCell64.Size = new System.Drawing.Size(49, 47);
-            this.txtCell64.String = "";
+            this.txtCell64.String = "8";
             this.txtCell64.TabIndex = 2;
             this.txtCell64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell64.UnderlinedStyle = false;
@@ -1972,7 +1973,7 @@
             this.txtCell73.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell73.PlaceholderText = null;
             this.txtCell73.Size = new System.Drawing.Size(49, 47);
-            this.txtCell73.String = "";
+            this.txtCell73.String = "7";
             this.txtCell73.TabIndex = 4;
             this.txtCell73.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell73.UnderlinedStyle = false;
@@ -2086,7 +2087,7 @@
             this.txtCell68.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell68.PlaceholderText = null;
             this.txtCell68.Size = new System.Drawing.Size(49, 47);
-            this.txtCell68.String = "";
+            this.txtCell68.String = "7";
             this.txtCell68.TabIndex = 3;
             this.txtCell68.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell68.UnderlinedStyle = false;
@@ -2182,7 +2183,7 @@
             this.txtCell86.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell86.PlaceholderText = null;
             this.txtCell86.Size = new System.Drawing.Size(49, 47);
-            this.txtCell86.String = "";
+            this.txtCell86.String = "3";
             this.txtCell86.TabIndex = 7;
             this.txtCell86.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell86.UnderlinedStyle = false;
@@ -2235,12 +2236,32 @@
             this.txtCell66.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell66.UnderlinedStyle = false;
             // 
+            // btnCalc
+            // 
+            this.btnCalc.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCalc.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCalc.BorderRadius = 20;
+            this.btnCalc.BorderSize = 0;
+            this.btnCalc.FlatAppearance.BorderSize = 0;
+            this.btnCalc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCalc.ForeColor = System.Drawing.Color.White;
+            this.btnCalc.Location = new System.Drawing.Point(501, 209);
+            this.btnCalc.Name = "btnCalc";
+            this.btnCalc.Size = new System.Drawing.Size(150, 40);
+            this.btnCalc.TabIndex = 0;
+            this.btnCalc.TabStop = false;
+            this.btnCalc.Text = "Calculate";
+            this.btnCalc.UseVisualStyleBackColor = false;
+            this.btnCalc.Click += new System.EventHandler(this.BtnCalc_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCalc);
             this.Controls.Add(this.pnlArea02);
             this.Controls.Add(this.pnlArea01);
             this.Controls.Add(this.pnlArea22);
@@ -2360,5 +2381,6 @@
         private YANF.Control.YANTxt txtCell86;
         private YANF.Control.YANTxt txtCell76;
         private YANF.Control.YANTxt txtCell66;
+        private YANF.Control.YANBtn btnCalc;
     }
 }

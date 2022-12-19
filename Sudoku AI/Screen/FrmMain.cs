@@ -1,12 +1,5 @@
 ﻿using Sudoku_AI.Script.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Sudoku_AI.Script.Constant;
 
@@ -14,22 +7,29 @@ namespace Sudoku_AI.Screen
 {
     public partial class FrmMain : Form
     {
-        private Cell[,] _arrCells = new Cell[MAX_W, MAX_H];
-        private Area[,] _arrAreas = new Area[W, H];
+        #region Fields
+        private readonly Cell[,] _arrCells = new Cell[MAX_W, MAX_H];
+        private readonly Area[,] _arrAreas = new Area[WB, HB];
+        #endregion
+
+        #region Constructors
         public FrmMain()
         {
             InitializeComponent();
             InitItems();
         }
+        #endregion
 
+        #region Events
+        // frm load
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            //
+            // fill cells
             for (var i = 0; i < MAX_W; i++)
             {
                 for (var j = 0; j < MAX_H; j++)
                 {
-                    _arrCells[i, j] = new Cell()
+                    _arrCells[i, j] = new Cell
                     {
                         X = i,
                         Y = j,
@@ -37,25 +37,53 @@ namespace Sudoku_AI.Screen
                     };
                 }
             }
-            //
-            for (var i = 0; i < W; i++)
+            // fill areas
+            for (var i = 0; i < WB; i++)
             {
-                for (var j = 0; j < H; j++)
+                for (var j = 0; j < HB; j++)
                 {
-                    var area = new Area()
+                    var area = new Area
                     {
                         X = i,
                         Y = j,
+                        Cells = new Cell[WA, HA]
                     };
-                    for (var k = 0; k < W; k++)
+                    var m = 0;
+                    for (var k = i * WA; k < (i + 1) * WA; k++)
                     {
-                        for (var l = 0; l < H; l++)
+                        var n = 0;
+                        for (var l = j * WA; l < (j + 1) * HA; l++)
                         {
+                            area.Cells[m, n] = _arrCells[k, l];
+                            n++;
+                        }
+                        m++;
+                    }
+                    _arrAreas[i, j] = area;
+                }
+            }
+        }
 
+        // btn calculate click
+        private void BtnCalc_Click(object sender, EventArgs e)
+        {
+            var board = new Board(_arrAreas);
+            board.Prcs();
+            for (var i = 0; i < WB; i++)
+            {
+                for (var j = 0; j < HB; j++)
+                {
+                    for (var k = 0; k < WA; k++)
+                    {
+                        for (var l = 0; l < HA; l++)
+                        {
+                            var cell = board.Areas[i, j].Cells[k, l];
+                            _txtCells[cell.X, cell.Y].String = cell.Value;
                         }
                     }
                 }
             }
         }
+        #endregion
     }
 }
