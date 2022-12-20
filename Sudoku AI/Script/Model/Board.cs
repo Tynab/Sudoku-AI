@@ -40,7 +40,7 @@ namespace Sudoku_AI.Script.Model
             {
                 if (!IsCompleted)
                 {
-                    Choosen1();
+                    //Choosen1();
                     var listCells = new List<List<Cell>>();
                     var index = 0;
                     for (var i = 0; i < WB; i++)
@@ -58,24 +58,66 @@ namespace Sudoku_AI.Script.Model
                                         _tbls[index].ForEach(x => nums.Remove(x));
                                         _rows[cell.X].ForEach(x => nums.Remove(x));
                                         _cols[cell.Y].ForEach(x => nums.Remove(x));
-                                        var cells = new List<Cell>();
-                                        nums.ForEach(x =>
+                                        var cnt = nums.Count;
+                                        if (cnt == 1)
                                         {
-                                            cells.Add(new Cell
+                                            UpdAreas(new Cell
                                             {
                                                 X = cell.X,
                                                 Y = cell.Y,
-                                                Value = x
+                                                Value = nums[0]
                                             });
-                                        });
-                                        listCells.Add(cells);
+                                            UpdCells();
+                                            Prcs();
+                                        }
+                                        else if (cnt > 1)
+                                        {
+                                            var cells = new List<Cell>();
+                                            nums.ForEach(x =>
+                                            {
+                                                cells.Add(new Cell
+                                                {
+                                                    X = cell.X,
+                                                    Y = cell.Y,
+                                                    Value = x
+                                                });
+                                            });
+                                            listCells.Add(cells);
+                                        }
                                     }
                                 }
                             }
                             index++;
                         }
                     }
-                    var minCells = listCells.Select(x => x).Where(x => x.Count > 0).OrderBy(x => x.Count).ToList();
+                    var minCells = listCells.Select(x => x).OrderBy(x => x.Count).ToList();
+                    minCells.ForEach(x =>
+                    {
+                        var tasks = new List<Task<Board>>();
+                        x.ForEach(y =>
+                        {
+                            var task = Run(() =>
+                            {
+                                var board = Cr8Board(new Cell
+                                {
+                                    X = y.X,
+                                    Y = y.Y,
+                                    Value = y.Value
+                                });
+                                board.Prcs();
+                                return board.IsCompleted ? board : null;
+                            });
+                            tasks.Add(task);
+                        });
+                        WaitAll(tasks.ToArray());
+                        var cmpls = tasks.Select(z => z).Where(z => z.Result != null && z.Result.IsCompleted);
+                        if (cmpls.Count() > 0)
+                        {
+                            var newBoard = cmpls.First().Result;
+                            Areas = newBoard.Areas.Copy();
+                            IsCompleted = true;
+                        }
+                    });
                 }
             }
             else
@@ -182,44 +224,6 @@ namespace Sudoku_AI.Script.Model
             }
         }
 
-        // Choosen one
-        private void Choosen1()
-        {
-            var index = 0;
-            for (var i = 0; i < WB; i++)
-            {
-                for (var j = 0; j < HB; j++)
-                {
-                    for (var k = 0; k < WA; k++)
-                    {
-                        for (var l = 0; l < HA; l++)
-                        {
-                            var cell = Areas[i, j].Cells[k, l];
-                            if (string.IsNullOrWhiteSpace(cell.Value))
-                            {
-                                var nums = new List<string>(BASE_NUMS);
-                                _tbls[index].ForEach(x => nums.Remove(x));
-                                _rows[cell.X].ForEach(x => nums.Remove(x));
-                                _cols[cell.Y].ForEach(x => nums.Remove(x));
-                                if (nums.Count == 1)
-                                {
-                                    UpdAreas(new Cell
-                                    {
-                                        X = cell.X,
-                                        Y = cell.Y,
-                                        Value = nums[0]
-                                    });
-                                    UpdCells();
-                                    Choosen1();
-                                }
-                            }
-                        }
-                    }
-                    index++;
-                }
-            }
-        }
-
         // Create board
         private Board Cr8Board(Cell cell)
         {
@@ -243,23 +247,6 @@ namespace Sudoku_AI.Script.Model
                 }
             }
             return null;
-        }
-
-        // Success cells count
-        private int ScsCellsCnt()
-        {
-            var cnt = 0;
-            for (var i = 0; i < MAX_W; i++)
-            {
-                for (var j = 0; j < MAX_H; j++)
-                {
-                    if (!string.IsNullOrWhiteSpace(Cells[i, j].Value))
-                    {
-                        cnt++;
-                    }
-                }
-            }
-            return cnt;
         }
         #endregion
     }
