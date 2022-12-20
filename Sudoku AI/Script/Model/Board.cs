@@ -15,8 +15,8 @@ namespace Sudoku_AI.Script.Model
         #endregion
 
         #region Properties
-        internal Cell[,] Cells { get; set; }
-        internal Area[,] Areas { get; set; }
+        internal Cell[,] Cells { get; set; } = new Cell[MAX_W, MAX_H];
+        internal Area[,] Areas { get; set; } = new Area[WB, HB];
         internal bool IsBreak { get; set; } = false;
         internal bool IsCompleted { get; set; } = true;
         #endregion
@@ -24,8 +24,8 @@ namespace Sudoku_AI.Script.Model
         #region Constructors
         public Board(Area[,] arrAreas)
         {
-            Cells = new Cell[MAX_W, MAX_H];
             Areas = arrAreas.Copy();
+            UpdCells();
         }
         #endregion
 
@@ -33,54 +33,95 @@ namespace Sudoku_AI.Script.Model
         /// <summary>
         /// Process.
         /// </summary>
-        public async Task Prcs()
+        public void Prcs()
         {
             ChkBrk();
-            if (!IsBreak && !IsCompleted)
+            if (!IsBreak)
             {
-                var index = 0;
-                for (var i = 0; i < WB; i++)
+                if (!IsCompleted)
                 {
-                    for (var j = 0; j < HB; j++)
+                    Choosen1();
+                    var listCells = new List<List<Cell>>();
+                    var index = 0;
+                    for (var i = 0; i < WB; i++)
                     {
-                        for (var k = 0; k < WA; k++)
+                        for (var j = 0; j < HB; j++)
                         {
-                            for (var l = 0; l < HA; l++)
+                            for (var k = 0; k < WA; k++)
                             {
-                                var cell = Areas[i, j].Cells[k, l];
-                                if (string.IsNullOrWhiteSpace(cell.Value))
+                                for (var l = 0; l < HA; l++)
                                 {
-                                    var nums = new List<string>(BASE_NUMS);
-                                    _tbls[index].ForEach(x => nums.Remove(x));
-                                    _rows[cell.X].ForEach(x => nums.Remove(x));
-                                    _cols[cell.Y].ForEach(x => nums.Remove(x));
-                                    Parallel.ForEach(nums, async num =>
+                                    var cell = Areas[i, j].Cells[k, l];
+                                    if (string.IsNullOrWhiteSpace(cell.Value))
                                     {
-                                        var newCell = new Cell
+                                        var nums = new List<string>(BASE_NUMS);
+                                        _tbls[index].ForEach(x => nums.Remove(x));
+                                        _rows[cell.X].ForEach(x => nums.Remove(x));
+                                        _cols[cell.Y].ForEach(x => nums.Remove(x));
+                                        var cells = new List<Cell>();
+                                        nums.ForEach(x =>
                                         {
-                                            X = cell.X,
-                                            Y = cell.Y,
-                                            Value = num
-                                        };
-                                        var board = Cr8Board(newCell);
-                                        await board.Prcs();
-                                        if (board != null && board.IsCompleted)
-                                        {
-                                            Areas = board.Areas.Copy();
-                                            IsCompleted = true;
-                                            return;
-                                        }
-                                    });
+                                            cells.Add(new Cell
+                                            {
+                                                X = cell.X,
+                                                Y = cell.Y,
+                                                Value = x
+                                            });
+                                        });
+                                        listCells.Add(cells);
+                                    }
                                 }
                             }
+                            index++;
                         }
-                        index++;
                     }
+                    var minCells = listCells.Select(x => x).Where(x => x.Count > 0).OrderBy(x => x.Count).ToList();
                 }
             }
             else
             {
                 IsCompleted = false;
+            }
+        }
+
+        // Update cells
+        private void UpdCells()
+        {
+            for (var i = 0; i < WB; i++)
+            {
+                for (var j = 0; j < HB; j++)
+                {
+                    for (var k = 0; k < WA; k++)
+                    {
+                        for (var l = 0; l < HA; l++)
+                        {
+                            var cell = Areas[i, j].Cells[k, l];
+                            Cells[cell.X, cell.Y] = cell;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Update areas
+        private void UpdAreas(Cell cell)
+        {
+            for (var i = 0; i < WB; i++)
+            {
+                for (var j = 0; j < HB; j++)
+                {
+                    for (var k = 0; k < WA; k++)
+                    {
+                        for (var l = 0; l < HA; l++)
+                        {
+                            var focCell = Areas[i, j].Cells[k, l];
+                            if (focCell.X == cell.X && focCell.Y == cell.Y)
+                            {
+                                Areas[i, j].Cells[k, l] = cell;
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -93,28 +134,17 @@ namespace Sudoku_AI.Script.Model
             {
                 for (var j = 0; j < HB; j++)
                 {
-                    //
                     Areas[i, j].Prcs();
-                    var area = Areas[i, j];
-                    if (area.IsBreak)
+                    if (Areas[i, j].IsBreak)
                     {
                         IsBreak = true;
                         return;
                     }
                     else
                     {
-                        IsCompleted = IsCompleted && area.IsCompleted;
+                        IsCompleted = IsCompleted && Areas[i, j].IsCompleted;
                     }
-                    _tbls.Add(area.ExistValues);
-                    //
-                    for (var k = 0; k < WA; k++)
-                    {
-                        for (var l = 0; l < HA; l++)
-                        {
-                            var cell = Areas[i, j].Cells[k, l];
-                            Cells[cell.X, cell.Y] = cell;
-                        }
-                    }
+                    _tbls.Add(Areas[i, j].ExistValues);
                 }
             }
             // line scan
@@ -152,6 +182,44 @@ namespace Sudoku_AI.Script.Model
             }
         }
 
+        // Choosen one
+        private void Choosen1()
+        {
+            var index = 0;
+            for (var i = 0; i < WB; i++)
+            {
+                for (var j = 0; j < HB; j++)
+                {
+                    for (var k = 0; k < WA; k++)
+                    {
+                        for (var l = 0; l < HA; l++)
+                        {
+                            var cell = Areas[i, j].Cells[k, l];
+                            if (string.IsNullOrWhiteSpace(cell.Value))
+                            {
+                                var nums = new List<string>(BASE_NUMS);
+                                _tbls[index].ForEach(x => nums.Remove(x));
+                                _rows[cell.X].ForEach(x => nums.Remove(x));
+                                _cols[cell.Y].ForEach(x => nums.Remove(x));
+                                if (nums.Count == 1)
+                                {
+                                    UpdAreas(new Cell
+                                    {
+                                        X = cell.X,
+                                        Y = cell.Y,
+                                        Value = nums[0]
+                                    });
+                                    UpdCells();
+                                    Choosen1();
+                                }
+                            }
+                        }
+                    }
+                    index++;
+                }
+            }
+        }
+
         // Create board
         private Board Cr8Board(Cell cell)
         {
@@ -175,6 +243,23 @@ namespace Sudoku_AI.Script.Model
                 }
             }
             return null;
+        }
+
+        // Success cells count
+        private int ScsCellsCnt()
+        {
+            var cnt = 0;
+            for (var i = 0; i < MAX_W; i++)
+            {
+                for (var j = 0; j < MAX_H; j++)
+                {
+                    if (!string.IsNullOrWhiteSpace(Cells[i, j].Value))
+                    {
+                        cnt++;
+                    }
+                }
+            }
+            return cnt;
         }
         #endregion
     }

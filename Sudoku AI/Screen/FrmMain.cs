@@ -65,10 +65,10 @@ namespace Sudoku_AI.Screen
         }
 
         // btn calculate click
-        private async void BtnCalc_Click(object sender, EventArgs e)
+        private void BtnCalc_Click(object sender, EventArgs e)
         {
             var board = new Board(_arrAreas);
-            await board.Prcs();
+            board.Prcs();
             for (var i = 0; i < WB; i++)
             {
                 for (var j = 0; j < HB; j++)

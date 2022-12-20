@@ -1,5 +1,9 @@
 ﻿using Sudoku_AI.Script.Model;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using static Sudoku_AI.Script.Constant;
+using static System.Threading.Tasks.Task;
+using static System.Threading.Tasks.TaskStatus;
 
 namespace Sudoku_AI.Script
 {
@@ -37,6 +41,32 @@ namespace Sudoku_AI.Script
                 }
             }
             return newArr;
+        }
+
+        /// <summary>
+        /// List board first success task.
+        /// </summary>
+        /// <param name="tasks">Task list.</param>
+        /// <returns>Board completed.</returns>
+        internal static async Task<Board> Scs1st(this IEnumerable<Task<Board>> tasks)
+        {
+            var taskList = new List<Task<Board>>(tasks);
+            var cmpl1st = default(Task<Board>);
+            while (taskList.Count > 0)
+            {
+                var cmplCur = await WhenAny(taskList);
+                var board = cmplCur.Result;
+                if (cmplCur.Status == RanToCompletion && board != null && board.IsCompleted)
+                {
+                    cmpl1st = cmplCur;
+                    break;
+                }
+                else
+                {
+                    taskList.Remove(cmplCur);
+                }
+            }
+            return (cmpl1st != default(Task<Board>)) ? cmpl1st.Result : default;
         }
     }
 }
