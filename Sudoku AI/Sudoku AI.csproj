@@ -9,6 +9,7 @@
     <RootNamespace>Sudoku_AI</RootNamespace>
     <AssemblyName>Sudoku AI</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <LangVersion>preview</LangVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -31,6 +32,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ic.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -60,8 +64,12 @@
     <Compile Include="Screen\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screen\FrmMain.EventHandler.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Script\Common.cs" />
     <Compile Include="Script\Constant.cs" />
+    <Compile Include="Script\EventHandler.cs" />
     <Compile Include="Script\Model\Area.cs" />
     <Compile Include="Script\Model\Board.cs" />
     <Compile Include="Script\Model\Cell.cs" />
@@ -73,6 +81,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Screen\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
@@ -90,6 +99,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sPress.wav" />
+    <None Include="Resources\sNext.wav" />
+    <None Include="Resources\sHover.wav" />
+    <None Include="Resources\sChange.wav" />
+    <None Include="Resources\sBack.wav" />
+    <None Include="Resources\pOff.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ic.ico" />

@@ -1,9 +1,19 @@
 ﻿using System.Collections.Generic;
+using System.Media;
+using static Sudoku_AI.Properties.Resources;
 
 namespace Sudoku_AI.Script
 {
     internal static class Constant
     {
+        // sound
+        internal static readonly SoundPlayer SND_BACK = new(sBack);
+        internal static readonly SoundPlayer SND_NEXT = new(sNext);
+        internal static readonly SoundPlayer SND_HOV = new(sHover);
+        internal static readonly SoundPlayer SND_PRS = new(sPress);
+        internal static readonly SoundPlayer SND_CHG = new(sChange);
+
+        // other
         internal const int WB = 3;
         internal const int HB = 3;
         internal const int WA = 3;

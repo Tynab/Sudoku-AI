@@ -1,9 +1,6 @@
 ﻿using Sudoku_AI.Screen;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using static System.Windows.Forms.Application;
 
 namespace Sudoku_AI
 {
@@ -15,9 +12,9 @@ namespace Sudoku_AI
         [STAThread]
         private static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMain());
+            EnableVisualStyles();
+            SetCompatibleTextRenderingDefault(false);
+            Run(new FrmMain());
         }
     }
 }

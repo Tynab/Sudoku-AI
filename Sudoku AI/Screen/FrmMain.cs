@@ -1,7 +1,12 @@
 ﻿using Sudoku_AI.Script.Model;
 using System;
+using System.Linq;
 using System.Windows.Forms;
+using YANF.Script;
 using static Sudoku_AI.Script.Constant;
+using static Sudoku_AI.Script.EventHandler;
+using static System.Drawing.Color;
+using static YANF.Script.YANEvent;
 
 namespace Sudoku_AI.Screen
 {
@@ -17,6 +22,19 @@ namespace Sudoku_AI.Screen
         {
             InitializeComponent();
             InitItems();
+            // txt evnt
+            foreach (var txt in this.GetAllObjs(typeof(TextBox)).Cast<TextBox>())
+            {
+                txt.KeyPress += TxtNumeric_Keypress;
+            }
+            // pnl Bar evnt
+            pnlBar.MouseDown += MoveFrmMod_MouseDown;
+            pnlBar.MouseMove += MoveFrm_MouseMove;
+            pnlBar.MouseUp += MoveFrm_MouseUp;
+            // lbl Title evnt
+            lblTit.MouseDown += MoveFrmMod_MouseDown;
+            lblTit.MouseMove += MoveFrm_MouseMove;
+            lblTit.MouseUp += MoveFrm_MouseUp;
         }
         #endregion
 
@@ -24,20 +42,106 @@ namespace Sudoku_AI.Screen
         // frm load
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            // fill cells
+            FillCells();
+            FillAreas();
+        }
+
+        // frm shown
+        private void FrmMain_Shown(object sender, EventArgs e) => this.FadeIn();
+
+        // frm closing
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e) => this.FadeOut();
+
+        // btn calculate click
+        private void BtnCalc_Click(object sender, EventArgs e)
+        {
+            // sound
+            SND_NEXT.Play();
+            // block board
+            foreach (var txt in this.GetAllObjs(typeof(TextBox)).Cast<TextBox>())
+            {
+                txt.ReadOnly = true;
+            }
+            // process
+            var board = new Board(_arrAreas);
+            board.Prcs();
+            for (var i = 0; i < WB; i++)
+            {
+                for (var j = 0; j < HB; j++)
+                {
+                    for (var k = 0; k < WA; k++)
+                    {
+                        for (var l = 0; l < HA; l++)
+                        {
+                            var cell = board.Areas[i, j].Cells[k, l];
+                            _txtCells[cell.X, cell.Y].String = cell.Value;
+                        }
+                    }
+                }
+            }
+            // option
+            btnCalc.Select();
+        }
+
+        // btn Reset click
+        private void BtnRst_Click(object sender, EventArgs e)
+        {
+            // sound
+            SND_BACK.Play();
+            // unblock board
+            foreach (var txt in this.GetAllObjs(typeof(TextBox)).Cast<TextBox>())
+            {
+                txt.ReadOnly = false;
+            }
+            // clear board
             for (var i = 0; i < MAX_W; i++)
             {
                 for (var j = 0; j < MAX_H; j++)
                 {
+                    _txtCells[i, j].String = string.Empty;
+                    _txtCells[i, j].ForeColor = DimGray;
+                }
+            }
+        }
+
+        // btn Close click
+        private void BtnCl_Click(object sender, EventArgs e)
+        {
+            // action
+            Close();
+            // sound
+            SND_NEXT.PlaySync();
+        }
+        #endregion
+
+        #region Methods
+        // Fill cells
+        private void FillCells()
+        {
+            for (var i = 0; i < MAX_W; i++)
+            {
+                for (var j = 0; j < MAX_H; j++)
+                {
+                    // fill cells
+                    var val = _txtCells[i, j].String;
                     _arrCells[i, j] = new Cell
                     {
                         X = i,
                         Y = j,
-                        Value = _txtCells[i, j].String
+                        Value = val
                     };
+                    // change mode
+                    if (string.IsNullOrWhiteSpace(val))
+                    {
+                        _txtCells[i, j].ForeColor = Blue;
+                    }
                 }
             }
-            // fill areas
+        }
+
+        // Fill areas
+        private void FillAreas()
+        {
             for (var i = 0; i < WB; i++)
             {
                 for (var j = 0; j < HB; j++)
@@ -60,27 +164,6 @@ namespace Sudoku_AI.Screen
                         m++;
                     }
                     _arrAreas[i, j] = area;
-                }
-            }
-        }
-
-        // btn calculate click
-        private void BtnCalc_Click(object sender, EventArgs e)
-        {
-            var board = new Board(_arrAreas);
-            board.Prcs();
-            for (var i = 0; i < WB; i++)
-            {
-                for (var j = 0; j < HB; j++)
-                {
-                    for (var k = 0; k < WA; k++)
-                    {
-                        for (var l = 0; l < HA; l++)
-                        {
-                            var cell = board.Areas[i, j].Cells[k, l];
-                            _txtCells[cell.X, cell.Y].String = cell.Value;
-                        }
-                    }
                 }
             }
         }

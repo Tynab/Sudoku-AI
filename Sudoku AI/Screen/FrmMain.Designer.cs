@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.txtCell00 = new YANF.Control.YANTxt();
             this.pnlArea00 = new System.Windows.Forms.Panel();
             this.txtCell22 = new YANF.Control.YANTxt();
@@ -119,6 +120,11 @@
             this.txtCell76 = new YANF.Control.YANTxt();
             this.txtCell66 = new YANF.Control.YANTxt();
             this.btnCalc = new YANF.Control.YANBtn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCl = new YANF.Control.YANBtn();
+            this.btnRst = new YANF.Control.YANBtn();
+            this.pnlBar = new YANF.Control.YANGradPnl();
+            this.lblTit = new System.Windows.Forms.Label();
             this.pnlArea00.SuspendLayout();
             this.pnlArea01.SuspendLayout();
             this.pnlArea02.SuspendLayout();
@@ -128,13 +134,15 @@
             this.pnlArea20.SuspendLayout();
             this.pnlArea21.SuspendLayout();
             this.pnlArea22.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.pnlBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtCell00
             // 
             this.txtCell00.BackColor = System.Drawing.Color.White;
             this.txtCell00.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell00.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell00.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell00.BorderRadius = 5;
             this.txtCell00.BorderSize = 2;
             this.txtCell00.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -166,7 +174,7 @@
             this.pnlArea00.Controls.Add(this.txtCell20);
             this.pnlArea00.Controls.Add(this.txtCell10);
             this.pnlArea00.Controls.Add(this.txtCell00);
-            this.pnlArea00.Location = new System.Drawing.Point(10, 10);
+            this.pnlArea00.Location = new System.Drawing.Point(0, 0);
             this.pnlArea00.Margin = new System.Windows.Forms.Padding(10, 10, 0, 0);
             this.pnlArea00.Name = "pnlArea00";
             this.pnlArea00.Size = new System.Drawing.Size(150, 144);
@@ -176,7 +184,7 @@
             // 
             this.txtCell22.BackColor = System.Drawing.Color.White;
             this.txtCell22.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell22.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell22.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell22.BorderRadius = 5;
             this.txtCell22.BorderSize = 2;
             this.txtCell22.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -200,7 +208,7 @@
             // 
             this.txtCell12.BackColor = System.Drawing.Color.White;
             this.txtCell12.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell12.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell12.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell12.BorderRadius = 5;
             this.txtCell12.BorderSize = 2;
             this.txtCell12.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -215,7 +223,7 @@
             this.txtCell12.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell12.PlaceholderText = null;
             this.txtCell12.Size = new System.Drawing.Size(49, 47);
-            this.txtCell12.String = "8";
+            this.txtCell12.String = "";
             this.txtCell12.TabIndex = 6;
             this.txtCell12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell12.UnderlinedStyle = false;
@@ -224,7 +232,7 @@
             // 
             this.txtCell02.BackColor = System.Drawing.Color.White;
             this.txtCell02.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell02.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell02.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell02.BorderRadius = 5;
             this.txtCell02.BorderSize = 2;
             this.txtCell02.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -248,7 +256,7 @@
             // 
             this.txtCell21.BackColor = System.Drawing.Color.White;
             this.txtCell21.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell21.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell21.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell21.BorderRadius = 5;
             this.txtCell21.BorderSize = 2;
             this.txtCell21.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -263,7 +271,7 @@
             this.txtCell21.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell21.PlaceholderText = null;
             this.txtCell21.Size = new System.Drawing.Size(49, 47);
-            this.txtCell21.String = "5";
+            this.txtCell21.String = "";
             this.txtCell21.TabIndex = 8;
             this.txtCell21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell21.UnderlinedStyle = false;
@@ -272,7 +280,7 @@
             // 
             this.txtCell11.BackColor = System.Drawing.Color.White;
             this.txtCell11.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell11.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell11.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell11.BorderRadius = 5;
             this.txtCell11.BorderSize = 2;
             this.txtCell11.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -287,7 +295,7 @@
             this.txtCell11.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell11.PlaceholderText = null;
             this.txtCell11.Size = new System.Drawing.Size(49, 47);
-            this.txtCell11.String = "3";
+            this.txtCell11.String = "";
             this.txtCell11.TabIndex = 5;
             this.txtCell11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell11.UnderlinedStyle = false;
@@ -296,7 +304,7 @@
             // 
             this.txtCell01.BackColor = System.Drawing.Color.White;
             this.txtCell01.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell01.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell01.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell01.BorderRadius = 5;
             this.txtCell01.BorderSize = 2;
             this.txtCell01.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -320,7 +328,7 @@
             // 
             this.txtCell20.BackColor = System.Drawing.Color.White;
             this.txtCell20.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell20.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell20.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell20.BorderRadius = 5;
             this.txtCell20.BorderSize = 2;
             this.txtCell20.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -335,7 +343,7 @@
             this.txtCell20.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell20.PlaceholderText = null;
             this.txtCell20.Size = new System.Drawing.Size(49, 47);
-            this.txtCell20.String = "9";
+            this.txtCell20.String = "";
             this.txtCell20.TabIndex = 7;
             this.txtCell20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell20.UnderlinedStyle = false;
@@ -344,7 +352,7 @@
             // 
             this.txtCell10.BackColor = System.Drawing.Color.White;
             this.txtCell10.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell10.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell10.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell10.BorderRadius = 5;
             this.txtCell10.BorderSize = 2;
             this.txtCell10.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -376,7 +384,7 @@
             this.pnlArea01.Controls.Add(this.txtCell23);
             this.pnlArea01.Controls.Add(this.txtCell13);
             this.pnlArea01.Controls.Add(this.txtCell03);
-            this.pnlArea01.Location = new System.Drawing.Point(160, 10);
+            this.pnlArea01.Location = new System.Drawing.Point(150, 0);
             this.pnlArea01.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.pnlArea01.Name = "pnlArea01";
             this.pnlArea01.Size = new System.Drawing.Size(150, 144);
@@ -386,7 +394,7 @@
             // 
             this.txtCell25.BackColor = System.Drawing.Color.White;
             this.txtCell25.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell25.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell25.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell25.BorderRadius = 5;
             this.txtCell25.BorderSize = 2;
             this.txtCell25.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -410,7 +418,7 @@
             // 
             this.txtCell15.BackColor = System.Drawing.Color.White;
             this.txtCell15.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell15.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell15.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell15.BorderRadius = 5;
             this.txtCell15.BorderSize = 2;
             this.txtCell15.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -425,7 +433,7 @@
             this.txtCell15.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell15.PlaceholderText = null;
             this.txtCell15.Size = new System.Drawing.Size(49, 47);
-            this.txtCell15.String = "6";
+            this.txtCell15.String = "";
             this.txtCell15.TabIndex = 6;
             this.txtCell15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell15.UnderlinedStyle = false;
@@ -434,7 +442,7 @@
             // 
             this.txtCell05.BackColor = System.Drawing.Color.White;
             this.txtCell05.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell05.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell05.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell05.BorderRadius = 5;
             this.txtCell05.BorderSize = 2;
             this.txtCell05.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -458,7 +466,7 @@
             // 
             this.txtCell24.BackColor = System.Drawing.Color.White;
             this.txtCell24.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell24.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell24.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell24.BorderRadius = 5;
             this.txtCell24.BorderSize = 2;
             this.txtCell24.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -482,7 +490,7 @@
             // 
             this.txtCell14.BackColor = System.Drawing.Color.White;
             this.txtCell14.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell14.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell14.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell14.BorderRadius = 5;
             this.txtCell14.BorderSize = 2;
             this.txtCell14.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -506,7 +514,7 @@
             // 
             this.txtCell04.BackColor = System.Drawing.Color.White;
             this.txtCell04.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell04.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell04.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell04.BorderRadius = 5;
             this.txtCell04.BorderSize = 2;
             this.txtCell04.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -530,7 +538,7 @@
             // 
             this.txtCell23.BackColor = System.Drawing.Color.White;
             this.txtCell23.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell23.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell23.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell23.BorderRadius = 5;
             this.txtCell23.BorderSize = 2;
             this.txtCell23.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -554,7 +562,7 @@
             // 
             this.txtCell13.BackColor = System.Drawing.Color.White;
             this.txtCell13.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell13.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell13.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell13.BorderRadius = 5;
             this.txtCell13.BorderSize = 2;
             this.txtCell13.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -578,7 +586,7 @@
             // 
             this.txtCell03.BackColor = System.Drawing.Color.White;
             this.txtCell03.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell03.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell03.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell03.BorderRadius = 5;
             this.txtCell03.BorderSize = 2;
             this.txtCell03.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -593,7 +601,7 @@
             this.txtCell03.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell03.PlaceholderText = null;
             this.txtCell03.Size = new System.Drawing.Size(49, 47);
-            this.txtCell03.String = "4";
+            this.txtCell03.String = "";
             this.txtCell03.TabIndex = 1;
             this.txtCell03.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell03.UnderlinedStyle = false;
@@ -610,7 +618,7 @@
             this.pnlArea02.Controls.Add(this.txtCell26);
             this.pnlArea02.Controls.Add(this.txtCell16);
             this.pnlArea02.Controls.Add(this.txtCell06);
-            this.pnlArea02.Location = new System.Drawing.Point(310, 10);
+            this.pnlArea02.Location = new System.Drawing.Point(300, 0);
             this.pnlArea02.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.pnlArea02.Name = "pnlArea02";
             this.pnlArea02.Size = new System.Drawing.Size(150, 144);
@@ -620,7 +628,7 @@
             // 
             this.txtCell28.BackColor = System.Drawing.Color.White;
             this.txtCell28.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell28.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell28.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell28.BorderRadius = 5;
             this.txtCell28.BorderSize = 2;
             this.txtCell28.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -635,7 +643,7 @@
             this.txtCell28.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell28.PlaceholderText = null;
             this.txtCell28.Size = new System.Drawing.Size(49, 47);
-            this.txtCell28.String = "2";
+            this.txtCell28.String = "";
             this.txtCell28.TabIndex = 9;
             this.txtCell28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell28.UnderlinedStyle = false;
@@ -644,7 +652,7 @@
             // 
             this.txtCell18.BackColor = System.Drawing.Color.White;
             this.txtCell18.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell18.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell18.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell18.BorderRadius = 5;
             this.txtCell18.BorderSize = 2;
             this.txtCell18.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -668,7 +676,7 @@
             // 
             this.txtCell08.BackColor = System.Drawing.Color.White;
             this.txtCell08.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell08.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell08.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell08.BorderRadius = 5;
             this.txtCell08.BorderSize = 2;
             this.txtCell08.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -683,7 +691,7 @@
             this.txtCell08.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell08.PlaceholderText = null;
             this.txtCell08.Size = new System.Drawing.Size(49, 47);
-            this.txtCell08.String = "9";
+            this.txtCell08.String = "";
             this.txtCell08.TabIndex = 3;
             this.txtCell08.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell08.UnderlinedStyle = false;
@@ -692,7 +700,7 @@
             // 
             this.txtCell27.BackColor = System.Drawing.Color.White;
             this.txtCell27.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell27.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell27.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell27.BorderRadius = 5;
             this.txtCell27.BorderSize = 2;
             this.txtCell27.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -716,7 +724,7 @@
             // 
             this.txtCell17.BackColor = System.Drawing.Color.White;
             this.txtCell17.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell17.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell17.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell17.BorderRadius = 5;
             this.txtCell17.BorderSize = 2;
             this.txtCell17.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -740,7 +748,7 @@
             // 
             this.txtCell07.BackColor = System.Drawing.Color.White;
             this.txtCell07.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell07.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell07.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell07.BorderRadius = 5;
             this.txtCell07.BorderSize = 2;
             this.txtCell07.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -764,7 +772,7 @@
             // 
             this.txtCell26.BackColor = System.Drawing.Color.White;
             this.txtCell26.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell26.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell26.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell26.BorderRadius = 5;
             this.txtCell26.BorderSize = 2;
             this.txtCell26.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -779,7 +787,7 @@
             this.txtCell26.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell26.PlaceholderText = null;
             this.txtCell26.Size = new System.Drawing.Size(49, 47);
-            this.txtCell26.String = "6";
+            this.txtCell26.String = "";
             this.txtCell26.TabIndex = 7;
             this.txtCell26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell26.UnderlinedStyle = false;
@@ -788,7 +796,7 @@
             // 
             this.txtCell16.BackColor = System.Drawing.Color.White;
             this.txtCell16.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell16.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell16.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell16.BorderRadius = 5;
             this.txtCell16.BorderSize = 2;
             this.txtCell16.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -803,7 +811,7 @@
             this.txtCell16.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell16.PlaceholderText = null;
             this.txtCell16.Size = new System.Drawing.Size(49, 47);
-            this.txtCell16.String = "7";
+            this.txtCell16.String = "";
             this.txtCell16.TabIndex = 4;
             this.txtCell16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell16.UnderlinedStyle = false;
@@ -812,7 +820,7 @@
             // 
             this.txtCell06.BackColor = System.Drawing.Color.White;
             this.txtCell06.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell06.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell06.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell06.BorderRadius = 5;
             this.txtCell06.BorderSize = 2;
             this.txtCell06.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -844,7 +852,7 @@
             this.pnlArea10.Controls.Add(this.txtCell50);
             this.pnlArea10.Controls.Add(this.txtCell40);
             this.pnlArea10.Controls.Add(this.txtCell30);
-            this.pnlArea10.Location = new System.Drawing.Point(10, 154);
+            this.pnlArea10.Location = new System.Drawing.Point(0, 144);
             this.pnlArea10.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.pnlArea10.Name = "pnlArea10";
             this.pnlArea10.Size = new System.Drawing.Size(150, 144);
@@ -854,7 +862,7 @@
             // 
             this.txtCell52.BackColor = System.Drawing.Color.White;
             this.txtCell52.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell52.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell52.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell52.BorderRadius = 5;
             this.txtCell52.BorderSize = 2;
             this.txtCell52.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -878,7 +886,7 @@
             // 
             this.txtCell42.BackColor = System.Drawing.Color.White;
             this.txtCell42.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell42.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell42.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell42.BorderRadius = 5;
             this.txtCell42.BorderSize = 2;
             this.txtCell42.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -902,7 +910,7 @@
             // 
             this.txtCell32.BackColor = System.Drawing.Color.White;
             this.txtCell32.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell32.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell32.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell32.BorderRadius = 5;
             this.txtCell32.BorderSize = 2;
             this.txtCell32.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -917,7 +925,7 @@
             this.txtCell32.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell32.PlaceholderText = null;
             this.txtCell32.Size = new System.Drawing.Size(49, 47);
-            this.txtCell32.String = "3";
+            this.txtCell32.String = "";
             this.txtCell32.TabIndex = 3;
             this.txtCell32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell32.UnderlinedStyle = false;
@@ -926,7 +934,7 @@
             // 
             this.txtCell51.BackColor = System.Drawing.Color.White;
             this.txtCell51.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell51.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell51.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell51.BorderRadius = 5;
             this.txtCell51.BorderSize = 2;
             this.txtCell51.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -941,7 +949,7 @@
             this.txtCell51.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell51.PlaceholderText = null;
             this.txtCell51.Size = new System.Drawing.Size(49, 47);
-            this.txtCell51.String = "9";
+            this.txtCell51.String = "";
             this.txtCell51.TabIndex = 8;
             this.txtCell51.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell51.UnderlinedStyle = false;
@@ -950,7 +958,7 @@
             // 
             this.txtCell41.BackColor = System.Drawing.Color.White;
             this.txtCell41.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell41.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell41.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell41.BorderRadius = 5;
             this.txtCell41.BorderSize = 2;
             this.txtCell41.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -974,7 +982,7 @@
             // 
             this.txtCell31.BackColor = System.Drawing.Color.White;
             this.txtCell31.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell31.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell31.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell31.BorderRadius = 5;
             this.txtCell31.BorderSize = 2;
             this.txtCell31.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -989,7 +997,7 @@
             this.txtCell31.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell31.PlaceholderText = null;
             this.txtCell31.Size = new System.Drawing.Size(49, 47);
-            this.txtCell31.String = "1";
+            this.txtCell31.String = "";
             this.txtCell31.TabIndex = 2;
             this.txtCell31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell31.UnderlinedStyle = false;
@@ -998,7 +1006,7 @@
             // 
             this.txtCell50.BackColor = System.Drawing.Color.White;
             this.txtCell50.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell50.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell50.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell50.BorderRadius = 5;
             this.txtCell50.BorderSize = 2;
             this.txtCell50.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1013,7 +1021,7 @@
             this.txtCell50.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell50.PlaceholderText = null;
             this.txtCell50.Size = new System.Drawing.Size(49, 47);
-            this.txtCell50.String = "7";
+            this.txtCell50.String = "";
             this.txtCell50.TabIndex = 7;
             this.txtCell50.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell50.UnderlinedStyle = false;
@@ -1022,7 +1030,7 @@
             // 
             this.txtCell40.BackColor = System.Drawing.Color.White;
             this.txtCell40.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell40.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell40.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell40.BorderRadius = 5;
             this.txtCell40.BorderSize = 2;
             this.txtCell40.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1046,7 +1054,7 @@
             // 
             this.txtCell30.BackColor = System.Drawing.Color.White;
             this.txtCell30.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell30.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell30.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell30.BorderRadius = 5;
             this.txtCell30.BorderSize = 2;
             this.txtCell30.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1061,7 +1069,7 @@
             this.txtCell30.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell30.PlaceholderText = null;
             this.txtCell30.Size = new System.Drawing.Size(49, 47);
-            this.txtCell30.String = "2";
+            this.txtCell30.String = "";
             this.txtCell30.TabIndex = 1;
             this.txtCell30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell30.UnderlinedStyle = false;
@@ -1078,7 +1086,7 @@
             this.pnlArea11.Controls.Add(this.txtCell53);
             this.pnlArea11.Controls.Add(this.txtCell43);
             this.pnlArea11.Controls.Add(this.txtCell33);
-            this.pnlArea11.Location = new System.Drawing.Point(160, 154);
+            this.pnlArea11.Location = new System.Drawing.Point(150, 144);
             this.pnlArea11.Margin = new System.Windows.Forms.Padding(0);
             this.pnlArea11.Name = "pnlArea11";
             this.pnlArea11.Size = new System.Drawing.Size(150, 144);
@@ -1088,7 +1096,7 @@
             // 
             this.txtCell55.BackColor = System.Drawing.Color.White;
             this.txtCell55.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell55.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell55.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell55.BorderRadius = 5;
             this.txtCell55.BorderSize = 2;
             this.txtCell55.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1103,7 +1111,7 @@
             this.txtCell55.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell55.PlaceholderText = null;
             this.txtCell55.Size = new System.Drawing.Size(49, 47);
-            this.txtCell55.String = "4";
+            this.txtCell55.String = "";
             this.txtCell55.TabIndex = 9;
             this.txtCell55.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell55.UnderlinedStyle = false;
@@ -1112,7 +1120,7 @@
             // 
             this.txtCell45.BackColor = System.Drawing.Color.White;
             this.txtCell45.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell45.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell45.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell45.BorderRadius = 5;
             this.txtCell45.BorderSize = 2;
             this.txtCell45.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1136,7 +1144,7 @@
             // 
             this.txtCell35.BackColor = System.Drawing.Color.White;
             this.txtCell35.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell35.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell35.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell35.BorderRadius = 5;
             this.txtCell35.BorderSize = 2;
             this.txtCell35.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1151,7 +1159,7 @@
             this.txtCell35.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell35.PlaceholderText = null;
             this.txtCell35.Size = new System.Drawing.Size(49, 47);
-            this.txtCell35.String = "5";
+            this.txtCell35.String = "";
             this.txtCell35.TabIndex = 3;
             this.txtCell35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell35.UnderlinedStyle = false;
@@ -1160,7 +1168,7 @@
             // 
             this.txtCell54.BackColor = System.Drawing.Color.White;
             this.txtCell54.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell54.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell54.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell54.BorderRadius = 5;
             this.txtCell54.BorderSize = 2;
             this.txtCell54.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1175,7 +1183,7 @@
             this.txtCell54.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell54.PlaceholderText = null;
             this.txtCell54.Size = new System.Drawing.Size(49, 47);
-            this.txtCell54.String = "6";
+            this.txtCell54.String = "";
             this.txtCell54.TabIndex = 8;
             this.txtCell54.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell54.UnderlinedStyle = false;
@@ -1184,7 +1192,7 @@
             // 
             this.txtCell44.BackColor = System.Drawing.Color.White;
             this.txtCell44.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell44.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell44.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell44.BorderRadius = 5;
             this.txtCell44.BorderSize = 2;
             this.txtCell44.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1208,7 +1216,7 @@
             // 
             this.txtCell34.BackColor = System.Drawing.Color.White;
             this.txtCell34.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell34.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell34.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell34.BorderRadius = 5;
             this.txtCell34.BorderSize = 2;
             this.txtCell34.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1223,7 +1231,7 @@
             this.txtCell34.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell34.PlaceholderText = null;
             this.txtCell34.Size = new System.Drawing.Size(49, 47);
-            this.txtCell34.String = "9";
+            this.txtCell34.String = "";
             this.txtCell34.TabIndex = 2;
             this.txtCell34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell34.UnderlinedStyle = false;
@@ -1232,7 +1240,7 @@
             // 
             this.txtCell53.BackColor = System.Drawing.Color.White;
             this.txtCell53.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell53.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell53.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell53.BorderRadius = 5;
             this.txtCell53.BorderSize = 2;
             this.txtCell53.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1247,7 +1255,7 @@
             this.txtCell53.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell53.PlaceholderText = null;
             this.txtCell53.Size = new System.Drawing.Size(49, 47);
-            this.txtCell53.String = "3";
+            this.txtCell53.String = "";
             this.txtCell53.TabIndex = 7;
             this.txtCell53.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell53.UnderlinedStyle = false;
@@ -1256,7 +1264,7 @@
             // 
             this.txtCell43.BackColor = System.Drawing.Color.White;
             this.txtCell43.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell43.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell43.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell43.BorderRadius = 5;
             this.txtCell43.BorderSize = 2;
             this.txtCell43.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1271,7 +1279,7 @@
             this.txtCell43.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell43.PlaceholderText = null;
             this.txtCell43.Size = new System.Drawing.Size(49, 47);
-            this.txtCell43.String = "2";
+            this.txtCell43.String = "";
             this.txtCell43.TabIndex = 4;
             this.txtCell43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell43.UnderlinedStyle = false;
@@ -1280,7 +1288,7 @@
             // 
             this.txtCell33.BackColor = System.Drawing.Color.White;
             this.txtCell33.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell33.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell33.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell33.BorderRadius = 5;
             this.txtCell33.BorderSize = 2;
             this.txtCell33.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1312,7 +1320,7 @@
             this.pnlArea12.Controls.Add(this.txtCell56);
             this.pnlArea12.Controls.Add(this.txtCell46);
             this.pnlArea12.Controls.Add(this.txtCell36);
-            this.pnlArea12.Location = new System.Drawing.Point(310, 154);
+            this.pnlArea12.Location = new System.Drawing.Point(300, 144);
             this.pnlArea12.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.pnlArea12.Name = "pnlArea12";
             this.pnlArea12.Size = new System.Drawing.Size(150, 144);
@@ -1322,7 +1330,7 @@
             // 
             this.txtCell58.BackColor = System.Drawing.Color.White;
             this.txtCell58.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell58.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell58.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell58.BorderRadius = 5;
             this.txtCell58.BorderSize = 2;
             this.txtCell58.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1337,7 +1345,7 @@
             this.txtCell58.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell58.PlaceholderText = null;
             this.txtCell58.Size = new System.Drawing.Size(49, 47);
-            this.txtCell58.String = "1";
+            this.txtCell58.String = "";
             this.txtCell58.TabIndex = 9;
             this.txtCell58.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell58.UnderlinedStyle = false;
@@ -1346,7 +1354,7 @@
             // 
             this.txtCell48.BackColor = System.Drawing.Color.White;
             this.txtCell48.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell48.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell48.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell48.BorderRadius = 5;
             this.txtCell48.BorderSize = 2;
             this.txtCell48.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1361,7 +1369,7 @@
             this.txtCell48.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell48.PlaceholderText = null;
             this.txtCell48.Size = new System.Drawing.Size(49, 47);
-            this.txtCell48.String = "3";
+            this.txtCell48.String = "";
             this.txtCell48.TabIndex = 6;
             this.txtCell48.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell48.UnderlinedStyle = false;
@@ -1370,7 +1378,7 @@
             // 
             this.txtCell38.BackColor = System.Drawing.Color.White;
             this.txtCell38.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell38.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell38.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell38.BorderRadius = 5;
             this.txtCell38.BorderSize = 2;
             this.txtCell38.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1385,7 +1393,7 @@
             this.txtCell38.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell38.PlaceholderText = null;
             this.txtCell38.Size = new System.Drawing.Size(49, 47);
-            this.txtCell38.String = "6";
+            this.txtCell38.String = "";
             this.txtCell38.TabIndex = 3;
             this.txtCell38.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell38.UnderlinedStyle = false;
@@ -1394,7 +1402,7 @@
             // 
             this.txtCell57.BackColor = System.Drawing.Color.White;
             this.txtCell57.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell57.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell57.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell57.BorderRadius = 5;
             this.txtCell57.BorderSize = 2;
             this.txtCell57.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1409,7 +1417,7 @@
             this.txtCell57.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell57.PlaceholderText = null;
             this.txtCell57.Size = new System.Drawing.Size(49, 47);
-            this.txtCell57.String = "8";
+            this.txtCell57.String = "";
             this.txtCell57.TabIndex = 8;
             this.txtCell57.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell57.UnderlinedStyle = false;
@@ -1418,7 +1426,7 @@
             // 
             this.txtCell47.BackColor = System.Drawing.Color.White;
             this.txtCell47.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell47.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell47.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell47.BorderRadius = 5;
             this.txtCell47.BorderSize = 2;
             this.txtCell47.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1433,7 +1441,7 @@
             this.txtCell47.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell47.PlaceholderText = null;
             this.txtCell47.Size = new System.Drawing.Size(49, 47);
-            this.txtCell47.String = "5";
+            this.txtCell47.String = "";
             this.txtCell47.TabIndex = 5;
             this.txtCell47.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell47.UnderlinedStyle = false;
@@ -1442,7 +1450,7 @@
             // 
             this.txtCell37.BackColor = System.Drawing.Color.White;
             this.txtCell37.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell37.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell37.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell37.BorderRadius = 5;
             this.txtCell37.BorderSize = 2;
             this.txtCell37.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1457,7 +1465,7 @@
             this.txtCell37.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell37.PlaceholderText = null;
             this.txtCell37.Size = new System.Drawing.Size(49, 47);
-            this.txtCell37.String = "7";
+            this.txtCell37.String = "";
             this.txtCell37.TabIndex = 2;
             this.txtCell37.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell37.UnderlinedStyle = false;
@@ -1466,7 +1474,7 @@
             // 
             this.txtCell56.BackColor = System.Drawing.Color.White;
             this.txtCell56.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell56.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell56.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell56.BorderRadius = 5;
             this.txtCell56.BorderSize = 2;
             this.txtCell56.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1490,7 +1498,7 @@
             // 
             this.txtCell46.BackColor = System.Drawing.Color.White;
             this.txtCell46.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell46.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell46.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell46.BorderRadius = 5;
             this.txtCell46.BorderSize = 2;
             this.txtCell46.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1514,7 +1522,7 @@
             // 
             this.txtCell36.BackColor = System.Drawing.Color.White;
             this.txtCell36.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell36.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell36.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell36.BorderRadius = 5;
             this.txtCell36.BorderSize = 2;
             this.txtCell36.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1546,7 +1554,7 @@
             this.pnlArea20.Controls.Add(this.txtCell80);
             this.pnlArea20.Controls.Add(this.txtCell70);
             this.pnlArea20.Controls.Add(this.txtCell60);
-            this.pnlArea20.Location = new System.Drawing.Point(10, 298);
+            this.pnlArea20.Location = new System.Drawing.Point(0, 288);
             this.pnlArea20.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.pnlArea20.Name = "pnlArea20";
             this.pnlArea20.Size = new System.Drawing.Size(150, 144);
@@ -1556,7 +1564,7 @@
             // 
             this.txtCell82.BackColor = System.Drawing.Color.White;
             this.txtCell82.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell82.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell82.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell82.BorderRadius = 5;
             this.txtCell82.BorderSize = 2;
             this.txtCell82.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1580,7 +1588,7 @@
             // 
             this.txtCell72.BackColor = System.Drawing.Color.White;
             this.txtCell72.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell72.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell72.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell72.BorderRadius = 5;
             this.txtCell72.BorderSize = 2;
             this.txtCell72.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1595,7 +1603,7 @@
             this.txtCell72.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell72.PlaceholderText = null;
             this.txtCell72.Size = new System.Drawing.Size(49, 47);
-            this.txtCell72.String = "9";
+            this.txtCell72.String = "";
             this.txtCell72.TabIndex = 6;
             this.txtCell72.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell72.UnderlinedStyle = false;
@@ -1604,7 +1612,7 @@
             // 
             this.txtCell62.BackColor = System.Drawing.Color.White;
             this.txtCell62.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell62.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell62.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell62.BorderRadius = 5;
             this.txtCell62.BorderSize = 2;
             this.txtCell62.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1628,7 +1636,7 @@
             // 
             this.txtCell81.BackColor = System.Drawing.Color.White;
             this.txtCell81.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell81.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell81.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell81.BorderRadius = 5;
             this.txtCell81.BorderSize = 2;
             this.txtCell81.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1652,7 +1660,7 @@
             // 
             this.txtCell71.BackColor = System.Drawing.Color.White;
             this.txtCell71.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell71.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell71.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell71.BorderRadius = 5;
             this.txtCell71.BorderSize = 2;
             this.txtCell71.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1667,7 +1675,7 @@
             this.txtCell71.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell71.PlaceholderText = null;
             this.txtCell71.Size = new System.Drawing.Size(49, 47);
-            this.txtCell71.String = "2";
+            this.txtCell71.String = "";
             this.txtCell71.TabIndex = 5;
             this.txtCell71.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell71.UnderlinedStyle = false;
@@ -1676,7 +1684,7 @@
             // 
             this.txtCell61.BackColor = System.Drawing.Color.White;
             this.txtCell61.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell61.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell61.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell61.BorderRadius = 5;
             this.txtCell61.BorderSize = 2;
             this.txtCell61.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1700,7 +1708,7 @@
             // 
             this.txtCell80.BackColor = System.Drawing.Color.White;
             this.txtCell80.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell80.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell80.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell80.BorderRadius = 5;
             this.txtCell80.BorderSize = 2;
             this.txtCell80.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1715,7 +1723,7 @@
             this.txtCell80.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell80.PlaceholderText = null;
             this.txtCell80.Size = new System.Drawing.Size(49, 47);
-            this.txtCell80.String = "8";
+            this.txtCell80.String = "";
             this.txtCell80.TabIndex = 7;
             this.txtCell80.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell80.UnderlinedStyle = false;
@@ -1724,7 +1732,7 @@
             // 
             this.txtCell70.BackColor = System.Drawing.Color.White;
             this.txtCell70.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell70.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell70.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell70.BorderRadius = 5;
             this.txtCell70.BorderSize = 2;
             this.txtCell70.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1748,7 +1756,7 @@
             // 
             this.txtCell60.BackColor = System.Drawing.Color.White;
             this.txtCell60.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell60.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell60.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell60.BorderRadius = 5;
             this.txtCell60.BorderSize = 2;
             this.txtCell60.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1780,7 +1788,7 @@
             this.pnlArea21.Controls.Add(this.txtCell83);
             this.pnlArea21.Controls.Add(this.txtCell73);
             this.pnlArea21.Controls.Add(this.txtCell63);
-            this.pnlArea21.Location = new System.Drawing.Point(160, 298);
+            this.pnlArea21.Location = new System.Drawing.Point(150, 288);
             this.pnlArea21.Margin = new System.Windows.Forms.Padding(0);
             this.pnlArea21.Name = "pnlArea21";
             this.pnlArea21.Size = new System.Drawing.Size(150, 144);
@@ -1790,7 +1798,7 @@
             // 
             this.txtCell85.BackColor = System.Drawing.Color.White;
             this.txtCell85.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell85.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell85.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell85.BorderRadius = 5;
             this.txtCell85.BorderSize = 2;
             this.txtCell85.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1814,7 +1822,7 @@
             // 
             this.txtCell75.BackColor = System.Drawing.Color.White;
             this.txtCell75.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell75.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell75.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell75.BorderRadius = 5;
             this.txtCell75.BorderSize = 2;
             this.txtCell75.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1838,7 +1846,7 @@
             // 
             this.txtCell65.BackColor = System.Drawing.Color.White;
             this.txtCell65.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell65.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell65.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell65.BorderRadius = 5;
             this.txtCell65.BorderSize = 2;
             this.txtCell65.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1853,7 +1861,7 @@
             this.txtCell65.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell65.PlaceholderText = null;
             this.txtCell65.Size = new System.Drawing.Size(49, 47);
-            this.txtCell65.String = "9";
+            this.txtCell65.String = "";
             this.txtCell65.TabIndex = 3;
             this.txtCell65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell65.UnderlinedStyle = false;
@@ -1862,7 +1870,7 @@
             // 
             this.txtCell84.BackColor = System.Drawing.Color.White;
             this.txtCell84.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell84.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell84.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell84.BorderRadius = 5;
             this.txtCell84.BorderSize = 2;
             this.txtCell84.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1886,7 +1894,7 @@
             // 
             this.txtCell74.BackColor = System.Drawing.Color.White;
             this.txtCell74.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell74.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell74.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell74.BorderRadius = 5;
             this.txtCell74.BorderSize = 2;
             this.txtCell74.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1901,7 +1909,7 @@
             this.txtCell74.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell74.PlaceholderText = null;
             this.txtCell74.Size = new System.Drawing.Size(49, 47);
-            this.txtCell74.String = "4";
+            this.txtCell74.String = "";
             this.txtCell74.TabIndex = 5;
             this.txtCell74.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell74.UnderlinedStyle = false;
@@ -1910,7 +1918,7 @@
             // 
             this.txtCell64.BackColor = System.Drawing.Color.White;
             this.txtCell64.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell64.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell64.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell64.BorderRadius = 5;
             this.txtCell64.BorderSize = 2;
             this.txtCell64.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1925,7 +1933,7 @@
             this.txtCell64.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell64.PlaceholderText = null;
             this.txtCell64.Size = new System.Drawing.Size(49, 47);
-            this.txtCell64.String = "8";
+            this.txtCell64.String = "";
             this.txtCell64.TabIndex = 2;
             this.txtCell64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell64.UnderlinedStyle = false;
@@ -1934,7 +1942,7 @@
             // 
             this.txtCell83.BackColor = System.Drawing.Color.White;
             this.txtCell83.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell83.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell83.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell83.BorderRadius = 5;
             this.txtCell83.BorderSize = 2;
             this.txtCell83.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1958,7 +1966,7 @@
             // 
             this.txtCell73.BackColor = System.Drawing.Color.White;
             this.txtCell73.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell73.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell73.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell73.BorderRadius = 5;
             this.txtCell73.BorderSize = 2;
             this.txtCell73.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -1973,7 +1981,7 @@
             this.txtCell73.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell73.PlaceholderText = null;
             this.txtCell73.Size = new System.Drawing.Size(49, 47);
-            this.txtCell73.String = "7";
+            this.txtCell73.String = "";
             this.txtCell73.TabIndex = 4;
             this.txtCell73.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell73.UnderlinedStyle = false;
@@ -1982,7 +1990,7 @@
             // 
             this.txtCell63.BackColor = System.Drawing.Color.White;
             this.txtCell63.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell63.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell63.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell63.BorderRadius = 5;
             this.txtCell63.BorderSize = 2;
             this.txtCell63.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -2014,7 +2022,7 @@
             this.pnlArea22.Controls.Add(this.txtCell86);
             this.pnlArea22.Controls.Add(this.txtCell76);
             this.pnlArea22.Controls.Add(this.txtCell66);
-            this.pnlArea22.Location = new System.Drawing.Point(310, 298);
+            this.pnlArea22.Location = new System.Drawing.Point(300, 288);
             this.pnlArea22.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.pnlArea22.Name = "pnlArea22";
             this.pnlArea22.Size = new System.Drawing.Size(150, 144);
@@ -2024,7 +2032,7 @@
             // 
             this.txtCell88.BackColor = System.Drawing.Color.White;
             this.txtCell88.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell88.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell88.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell88.BorderRadius = 5;
             this.txtCell88.BorderSize = 2;
             this.txtCell88.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -2048,7 +2056,7 @@
             // 
             this.txtCell78.BackColor = System.Drawing.Color.White;
             this.txtCell78.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell78.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell78.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell78.BorderRadius = 5;
             this.txtCell78.BorderSize = 2;
             this.txtCell78.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -2072,7 +2080,7 @@
             // 
             this.txtCell68.BackColor = System.Drawing.Color.White;
             this.txtCell68.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell68.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell68.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell68.BorderRadius = 5;
             this.txtCell68.BorderSize = 2;
             this.txtCell68.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -2087,7 +2095,7 @@
             this.txtCell68.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell68.PlaceholderText = null;
             this.txtCell68.Size = new System.Drawing.Size(49, 47);
-            this.txtCell68.String = "7";
+            this.txtCell68.String = "";
             this.txtCell68.TabIndex = 3;
             this.txtCell68.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell68.UnderlinedStyle = false;
@@ -2096,7 +2104,7 @@
             // 
             this.txtCell87.BackColor = System.Drawing.Color.White;
             this.txtCell87.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell87.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell87.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell87.BorderRadius = 5;
             this.txtCell87.BorderSize = 2;
             this.txtCell87.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -2120,7 +2128,7 @@
             // 
             this.txtCell77.BackColor = System.Drawing.Color.White;
             this.txtCell77.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell77.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell77.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell77.BorderRadius = 5;
             this.txtCell77.BorderSize = 2;
             this.txtCell77.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -2144,7 +2152,7 @@
             // 
             this.txtCell67.BackColor = System.Drawing.Color.White;
             this.txtCell67.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell67.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell67.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell67.BorderRadius = 5;
             this.txtCell67.BorderSize = 2;
             this.txtCell67.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -2168,7 +2176,7 @@
             // 
             this.txtCell86.BackColor = System.Drawing.Color.White;
             this.txtCell86.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell86.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell86.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell86.BorderRadius = 5;
             this.txtCell86.BorderSize = 2;
             this.txtCell86.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -2183,7 +2191,7 @@
             this.txtCell86.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCell86.PlaceholderText = null;
             this.txtCell86.Size = new System.Drawing.Size(49, 47);
-            this.txtCell86.String = "3";
+            this.txtCell86.String = "";
             this.txtCell86.TabIndex = 7;
             this.txtCell86.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCell86.UnderlinedStyle = false;
@@ -2192,7 +2200,7 @@
             // 
             this.txtCell76.BackColor = System.Drawing.Color.White;
             this.txtCell76.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell76.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell76.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell76.BorderRadius = 5;
             this.txtCell76.BorderSize = 2;
             this.txtCell76.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -2216,7 +2224,7 @@
             // 
             this.txtCell66.BackColor = System.Drawing.Color.White;
             this.txtCell66.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCell66.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCell66.BorderFocusColor = System.Drawing.Color.DarkOrange;
             this.txtCell66.BorderRadius = 5;
             this.txtCell66.BorderSize = 2;
             this.txtCell66.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
@@ -2238,44 +2246,126 @@
             // 
             // btnCalc
             // 
-            this.btnCalc.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCalc.BackColor = System.Drawing.Color.SlateBlue;
             this.btnCalc.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnCalc.BorderRadius = 20;
             this.btnCalc.BorderSize = 0;
             this.btnCalc.FlatAppearance.BorderSize = 0;
             this.btnCalc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCalc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnCalc.ForeColor = System.Drawing.Color.White;
-            this.btnCalc.Location = new System.Drawing.Point(501, 209);
+            this.btnCalc.Location = new System.Drawing.Point(0, 450);
             this.btnCalc.Name = "btnCalc";
             this.btnCalc.Size = new System.Drawing.Size(150, 40);
-            this.btnCalc.TabIndex = 0;
+            this.btnCalc.TabIndex = 10;
             this.btnCalc.TabStop = false;
             this.btnCalc.Text = "Calculate";
             this.btnCalc.UseVisualStyleBackColor = false;
             this.btnCalc.Click += new System.EventHandler(this.BtnCalc_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnCl);
+            this.panel1.Controls.Add(this.pnlArea00);
+            this.panel1.Controls.Add(this.pnlArea10);
+            this.panel1.Controls.Add(this.btnRst);
+            this.panel1.Controls.Add(this.btnCalc);
+            this.panel1.Controls.Add(this.pnlArea02);
+            this.panel1.Controls.Add(this.pnlArea20);
+            this.panel1.Controls.Add(this.pnlArea01);
+            this.panel1.Controls.Add(this.pnlArea11);
+            this.panel1.Controls.Add(this.pnlArea22);
+            this.panel1.Controls.Add(this.pnlArea21);
+            this.panel1.Controls.Add(this.pnlArea12);
+            this.panel1.Location = new System.Drawing.Point(20, 60);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(450, 500);
+            this.panel1.TabIndex = 0;
+            // 
+            // btnCl
+            // 
+            this.btnCl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(61)))), ((int)(((byte)(85)))));
+            this.btnCl.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCl.BorderRadius = 20;
+            this.btnCl.BorderSize = 0;
+            this.btnCl.FlatAppearance.BorderSize = 0;
+            this.btnCl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
+            this.btnCl.ForeColor = System.Drawing.Color.White;
+            this.btnCl.Image = global::Sudoku_AI.Properties.Resources.pOff;
+            this.btnCl.Location = new System.Drawing.Point(205, 450);
+            this.btnCl.Name = "btnCl";
+            this.btnCl.Size = new System.Drawing.Size(40, 40);
+            this.btnCl.TabIndex = 0;
+            this.btnCl.TabStop = false;
+            this.btnCl.UseVisualStyleBackColor = false;
+            this.btnCl.Click += new System.EventHandler(this.BtnCl_Click);
+            // 
+            // btnRst
+            // 
+            this.btnRst.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnRst.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnRst.BorderRadius = 20;
+            this.btnRst.BorderSize = 0;
+            this.btnRst.FlatAppearance.BorderSize = 0;
+            this.btnRst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRst.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnRst.ForeColor = System.Drawing.Color.White;
+            this.btnRst.Location = new System.Drawing.Point(300, 450);
+            this.btnRst.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
+            this.btnRst.Name = "btnRst";
+            this.btnRst.Size = new System.Drawing.Size(150, 40);
+            this.btnRst.TabIndex = 10;
+            this.btnRst.TabStop = false;
+            this.btnRst.Text = "Reset";
+            this.btnRst.UseVisualStyleBackColor = false;
+            this.btnRst.Click += new System.EventHandler(this.BtnRst_Click);
+            // 
+            // pnlBar
+            // 
+            this.pnlBar.Angle = 0F;
+            this.pnlBar.BottomColor = System.Drawing.Color.SpringGreen;
+            this.pnlBar.Controls.Add(this.lblTit);
+            this.pnlBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlBar.Location = new System.Drawing.Point(0, 0);
+            this.pnlBar.Name = "pnlBar";
+            this.pnlBar.Size = new System.Drawing.Size(490, 40);
+            this.pnlBar.TabIndex = 0;
+            this.pnlBar.TopColor = System.Drawing.Color.DodgerBlue;
+            // 
+            // lblTit
+            // 
+            this.lblTit.BackColor = System.Drawing.Color.Transparent;
+            this.lblTit.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTit.ForeColor = System.Drawing.Color.White;
+            this.lblTit.Location = new System.Drawing.Point(160, 5);
+            this.lblTit.Name = "lblTit";
+            this.lblTit.Size = new System.Drawing.Size(170, 30);
+            this.lblTit.TabIndex = 0;
+            this.lblTit.Text = "Snudaokyu";
+            this.lblTit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnCalc);
-            this.Controls.Add(this.pnlArea02);
-            this.Controls.Add(this.pnlArea01);
-            this.Controls.Add(this.pnlArea22);
-            this.Controls.Add(this.pnlArea12);
-            this.Controls.Add(this.pnlArea21);
-            this.Controls.Add(this.pnlArea11);
-            this.Controls.Add(this.pnlArea20);
-            this.Controls.Add(this.pnlArea10);
-            this.Controls.Add(this.pnlArea00);
+            this.ClientSize = new System.Drawing.Size(490, 570);
+            this.ControlBox = false;
+            this.Controls.Add(this.pnlBar);
+            this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmMain";
+            this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sudoku";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
+            this.Shown += new System.EventHandler(this.FrmMain_Shown);
             this.pnlArea00.ResumeLayout(false);
             this.pnlArea01.ResumeLayout(false);
             this.pnlArea02.ResumeLayout(false);
@@ -2285,6 +2375,8 @@
             this.pnlArea20.ResumeLayout(false);
             this.pnlArea21.ResumeLayout(false);
             this.pnlArea22.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.pnlBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2382,5 +2474,10 @@
         private YANF.Control.YANTxt txtCell76;
         private YANF.Control.YANTxt txtCell66;
         private YANF.Control.YANBtn btnCalc;
+        private System.Windows.Forms.Panel panel1;
+        private YANF.Control.YANBtn btnRst;
+        private YANF.Control.YANGradPnl pnlBar;
+        private System.Windows.Forms.Label lblTit;
+        private YANF.Control.YANBtn btnCl;
     }
 }
