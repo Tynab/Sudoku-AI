@@ -4,7 +4,6 @@ using System.Linq;
 using System.Windows.Forms;
 using YANF.Script;
 using static Sudoku_AI.Script.Constant;
-using static Sudoku_AI.Script.EventHandler;
 using static System.Drawing.Color;
 using static YANF.Script.YANEvent;
 
@@ -57,30 +56,16 @@ namespace Sudoku_AI.Screen
         {
             // sound
             SND_NEXT.Play();
-            // block board
-            foreach (var txt in this.GetAllObjs(typeof(TextBox)).Cast<TextBox>())
-            {
-                txt.ReadOnly = true;
-            }
+            // main
+            pnlBar.Select();
+            FillCells();
+            FillAreas();
+            BlkBoardCtrl(true);
+            BoardCtrlRsltMode(true);
             // process
             var board = new Board(_arrAreas);
             board.Prcs();
-            for (var i = 0; i < WB; i++)
-            {
-                for (var j = 0; j < HB; j++)
-                {
-                    for (var k = 0; k < WA; k++)
-                    {
-                        for (var l = 0; l < HA; l++)
-                        {
-                            var cell = board.Areas[i, j].Cells[k, l];
-                            _txtCells[cell.X, cell.Y].String = cell.Value;
-                        }
-                    }
-                }
-            }
-            // option
-            btnCalc.Select();
+            FillBoardCtrl(board);
         }
 
         // btn Reset click
@@ -88,20 +73,9 @@ namespace Sudoku_AI.Screen
         {
             // sound
             SND_BACK.Play();
-            // unblock board
-            foreach (var txt in this.GetAllObjs(typeof(TextBox)).Cast<TextBox>())
-            {
-                txt.ReadOnly = false;
-            }
-            // clear board
-            for (var i = 0; i < MAX_W; i++)
-            {
-                for (var j = 0; j < MAX_H; j++)
-                {
-                    _txtCells[i, j].String = string.Empty;
-                    _txtCells[i, j].ForeColor = DimGray;
-                }
-            }
+            // main
+            BlkBoardCtrl(false);
+            BoardCtrlRsltMode(false);
         }
 
         // btn Close click
@@ -122,7 +96,6 @@ namespace Sudoku_AI.Screen
             {
                 for (var j = 0; j < MAX_H; j++)
                 {
-                    // fill cells
                     var val = _txtCells[i, j].String;
                     _arrCells[i, j] = new Cell
                     {
@@ -130,11 +103,6 @@ namespace Sudoku_AI.Screen
                         Y = j,
                         Value = val
                     };
-                    // change mode
-                    if (string.IsNullOrWhiteSpace(val))
-                    {
-                        _txtCells[i, j].ForeColor = Blue;
-                    }
                 }
             }
         }
@@ -164,6 +132,57 @@ namespace Sudoku_AI.Screen
                         m++;
                     }
                     _arrAreas[i, j] = area;
+                }
+            }
+        }
+
+        // Fill board ctrl
+        private void FillBoardCtrl(Board board)
+        {
+            for (var i = 0; i < WB; i++)
+            {
+                for (var j = 0; j < HB; j++)
+                {
+                    for (var k = 0; k < WA; k++)
+                    {
+                        for (var l = 0; l < HA; l++)
+                        {
+                            var cell = board.Areas[i, j].Cells[k, l];
+                            _txtCells[cell.X, cell.Y].String = cell.Value;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Block board control
+        private void BlkBoardCtrl(bool isBlk)
+        {
+            foreach (var txt in this.GetAllObjs(typeof(TextBox)).Cast<TextBox>())
+            {
+                txt.ReadOnly = isBlk;
+            }
+        }
+
+        // Board ctrl result mode
+        private void BoardCtrlRsltMode(bool isRsltMode)
+        {
+            for (var i = 0; i < MAX_W; i++)
+            {
+                for (var j = 0; j < MAX_H; j++)
+                {
+                    if (isRsltMode)
+                    {
+                        if (string.IsNullOrWhiteSpace(_txtCells[i, j].String))
+                        {
+                            _txtCells[i, j].ForeColor = Blue;
+                        }
+                    }
+                    else
+                    {
+                        _txtCells[i, j].String = string.Empty;
+                        _txtCells[i, j].ForeColor = DimGray;
+                    }
                 }
             }
         }

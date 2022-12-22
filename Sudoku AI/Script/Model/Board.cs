@@ -40,7 +40,6 @@ namespace Sudoku_AI.Script.Model
             {
                 if (!IsCompleted)
                 {
-                    //Choosen1();
                     var listCells = new List<List<Cell>>();
                     var index = 0;
                     for (var i = 0; i < WB; i++)
@@ -56,8 +55,52 @@ namespace Sudoku_AI.Script.Model
                                     {
                                         var nums = new List<string>(BASE_NUMS);
                                         _tbls[index].ForEach(x => nums.Remove(x));
-                                        _rows[cell.X].ForEach(x => nums.Remove(x));
-                                        _cols[cell.Y].ForEach(x => nums.Remove(x));
+                                        // rip x
+                                        var xRoot = cell.X;
+                                        _rows[xRoot].ForEach(x => nums.Remove(x));
+                                        NearPath(xRoot, out var xbfr, out var xAft);
+                                        // rip y
+                                        var yRoot = cell.Y;
+                                        _cols[yRoot].ForEach(x => nums.Remove(x));
+                                        NearPath(yRoot, out var yBfr, out var yAft);
+                                        // exception
+                                        if (nums.Count == 0)
+                                        {
+                                            IsBreak = true;
+                                            IsCompleted = false;
+                                            return;
+                                        }
+                                        // choosen one x
+                                        if (!string.IsNullOrWhiteSpace(Cells[xRoot, yBfr].Value) && !string.IsNullOrWhiteSpace(Cells[xRoot, yAft].Value))
+                                        {
+                                            foreach (var num in nums)
+                                            {
+                                                if (_rows[xbfr].Contains(num) && _rows[xAft].Contains(num))
+                                                {
+                                                    nums = new List<string>()
+                                                    {
+                                                        num
+                                                    };
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                        // choosen one y
+                                        if (!string.IsNullOrWhiteSpace(Cells[xbfr, yRoot].Value) && !string.IsNullOrWhiteSpace(Cells[xAft, yRoot].Value))
+                                        {
+                                            foreach (var num in nums)
+                                            {
+                                                if (_cols[yBfr].Contains(num) && _cols[yAft].Contains(num))
+                                                {
+                                                    nums = new List<string>()
+                                                    {
+                                                        num
+                                                    };
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                        // check continous
                                         var cnt = nums.Count;
                                         if (cnt == 1)
                                         {
@@ -90,39 +133,38 @@ namespace Sudoku_AI.Script.Model
                             index++;
                         }
                     }
-                    var minCells = listCells.Select(x => x).OrderBy(x => x.Count).ToList();
-                    minCells.ForEach(x =>
-                    {
-                        var tasks = new List<Task<Board>>();
-                        x.ForEach(y =>
-                        {
-                            var task = Run(() =>
-                            {
-                                var board = Cr8Board(new Cell
-                                {
-                                    X = y.X,
-                                    Y = y.Y,
-                                    Value = y.Value
-                                });
-                                board.Prcs();
-                                return board.IsCompleted ? board : null;
-                            });
-                            tasks.Add(task);
-                        });
-                        WaitAll(tasks.ToArray());
-                        var cmpls = tasks.Select(z => z).Where(z => z.Result != null && z.Result.IsCompleted);
-                        if (cmpls.Count() > 0)
-                        {
-                            var newBoard = cmpls.First().Result;
-                            Areas = newBoard.Areas.Copy();
-                            IsCompleted = true;
-                        }
-                    });
+                    listCells.Select(x => x).OrderBy(x => x.Count).ToList().ForEach(TrScsBoard);
                 }
             }
             else
             {
                 IsCompleted = false;
+            }
+        }
+
+        // Near path
+        private void NearPath(int coord, out int bfr, out int aft)
+        {
+            switch (coord % 3)
+            {
+                case 0:
+                {
+                    bfr = coord + 2;
+                    aft = coord + 1;
+                    break;
+                }
+                case 1:
+                {
+                    bfr = coord - 1;
+                    aft = coord + 1;
+                    break;
+                }
+                default:
+                {
+                    bfr = coord - 1;
+                    aft = coord - 2;
+                    break;
+                }
             }
         }
 
@@ -170,8 +212,18 @@ namespace Sudoku_AI.Script.Model
         // Break check
         private void ChkBrk()
         {
-            // areas scan
             _tbls = new List<List<string>>();
+            _rows = new List<List<string>>();
+            _cols = new List<List<string>>();
+            if (!UnitScan() || !LineScan())
+            {
+                IsBreak = true;
+            }
+        }
+
+        // Unit scan
+        private bool UnitScan()
+        {
             for (var i = 0; i < WB; i++)
             {
                 for (var j = 0; j < HB; j++)
@@ -179,8 +231,7 @@ namespace Sudoku_AI.Script.Model
                     Areas[i, j].Prcs();
                     if (Areas[i, j].IsBreak)
                     {
-                        IsBreak = true;
-                        return;
+                        return false;
                     }
                     else
                     {
@@ -189,9 +240,12 @@ namespace Sudoku_AI.Script.Model
                     _tbls.Add(Areas[i, j].ExistValues);
                 }
             }
-            // line scan
-            _rows = new List<List<string>>();
-            _cols = new List<List<string>>();
+            return true;
+        }
+
+        // Line scan
+        private bool LineScan()
+        {
             for (var i = 0; i < MAX_W; i++)
             {
                 var row = new List<string>();
@@ -212,16 +266,7 @@ namespace Sudoku_AI.Script.Model
                 _rows.Add(row);
                 _cols.Add(col);
             }
-            if (_rows.GroupBy(x => x).Where(g => g.Count() > 1).Select(g => g.Key).Count() > 0)
-            {
-                IsBreak = true;
-                return;
-            }
-            if (_cols.GroupBy(x => x).Where(g => g.Count() > 1).Select(g => g.Key).Count() > 0)
-            {
-                IsBreak = true;
-                return;
-            }
+            return _rows.GroupBy(x => x).Where(g => g.Count() > 1).Select(g => g.Key).Count() <= 0 && _cols.GroupBy(x => x).Where(g => g.Count() > 1).Select(g => g.Key).Count() <= 0;
         }
 
         // Create board
@@ -247,6 +292,38 @@ namespace Sudoku_AI.Script.Model
                 }
             }
             return null;
+        }
+
+        // Create flow
+        private Board Cr8Flow(Cell cell)
+        {
+            var board = Cr8Board(new Cell
+            {
+                X = cell.X,
+                Y = cell.Y,
+                Value = cell.Value
+            });
+            board.Prcs();
+            return board.IsCompleted ? board : null;
+        }
+
+        // Trace success board
+        private void TrScsBoard(List<Cell> cells)
+        {
+            var tasks = new List<Task<Board>>();
+            cells.ForEach(x =>
+            {
+                var task = Run(() => Cr8Flow(x));
+                tasks.Add(task);
+            });
+            WaitAll(tasks.ToArray());
+            var cmpls = tasks.Select(z => z).Where(z => z.Result != null);
+            if (cmpls.Count() > 0)
+            {
+                var newBoard = cmpls.First().Result;
+                Areas = newBoard.Areas.Copy();
+                IsCompleted = true;
+            }
         }
         #endregion
     }

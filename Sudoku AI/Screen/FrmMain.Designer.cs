@@ -2257,7 +2257,7 @@
             this.btnCalc.Location = new System.Drawing.Point(0, 450);
             this.btnCalc.Name = "btnCalc";
             this.btnCalc.Size = new System.Drawing.Size(150, 40);
-            this.btnCalc.TabIndex = 10;
+            this.btnCalc.TabIndex = 0;
             this.btnCalc.TabStop = false;
             this.btnCalc.Text = "Calculate";
             this.btnCalc.UseVisualStyleBackColor = false;
