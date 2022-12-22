@@ -34,6 +34,17 @@ namespace Sudoku_AI.Screen
             lblTit.MouseDown += MoveFrmMod_MouseDown;
             lblTit.MouseMove += MoveFrm_MouseMove;
             lblTit.MouseUp += MoveFrm_MouseUp;
+            // for demo
+            for(var i = 0; i < MAX_W; i++)
+            {
+                for(var j = 0; j < MAX_H; j++)
+                {
+                    if (!string.IsNullOrWhiteSpace(BOARD_DEMO[i, j]))
+                    {
+                        _txtCells[i, j].String = BOARD_DEMO[i, j];
+                    }
+                }
+            }
         }
         #endregion
 

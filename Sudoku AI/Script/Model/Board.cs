@@ -308,22 +308,52 @@ namespace Sudoku_AI.Script.Model
         }
 
         // Trace success board
-        private void TrScsBoard(List<Cell> cells)
+        private async void TrScsBoard(List<Cell> cells)
         {
-            var tasks = new List<Task<Board>>();
-            cells.ForEach(x =>
+            if (CntMiss() < 3)
             {
-                var task = Run(() => Cr8Flow(x));
-                tasks.Add(task);
-            });
-            WaitAll(tasks.ToArray());
-            var cmpls = tasks.Select(z => z).Where(z => z.Result != null);
-            if (cmpls.Count() > 0)
-            {
-                var newBoard = cmpls.First().Result;
-                Areas = newBoard.Areas.Copy();
-                IsCompleted = true;
+                var tasks = new List<Task<Board>>();
+                cells.ForEach(x =>
+                {
+                    var task = Run(() => Cr8Flow(x));
+                    tasks.Add(task);
+                });
+                var board = await tasks.Scs1st();
+                if (board is not null and not default(Board))
+                {
+                    Areas = board.Areas.Copy();
+                    IsCompleted = true;
+                }
+                //WaitAll(tasks.ToArray());
+                //var cmpls = tasks.Select(z => z).Where(z => z.Result != null);
+                //if (cmpls.Count() > 0)
+                //{
+                //    var board = cmpls.First().Result;
+                //    Areas = board.Areas.Copy();
+                //    IsCompleted = true;
+                //}
             }
+            else
+            {
+                cells.ForEach(x => Cr8Flow(x));
+            }
+        }
+
+        // Count miss
+        private int CntMiss()
+        {
+            var rslt = 0;
+            for (var i = 0; i < MAX_W; i++)
+            {
+                for (var j = 0; j < MAX_H; j++)
+                {
+                    if (string.IsNullOrWhiteSpace(Cells[i, j].Value))
+                    {
+                        rslt++;
+                    }
+                }
+            }
+            return rslt;
         }
         #endregion
     }
