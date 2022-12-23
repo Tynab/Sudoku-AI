@@ -6,10 +6,17 @@ namespace Sudoku_AI.Script.Model
     internal class Cell
     {
         #region Properties
-        internal int X { get; set; }
-        internal int Y { get; set; }
-        internal string Value { get; set; }
-        internal List<string> Values { get; set; } = new List<string>(BASE_NUMS);
+        internal int X { get; set; } = 0;
+        internal int Y { get; set; } = 0;
+        internal string Value { get; set; } = string.Empty;
+        internal List<string> AvailableValues { get; set; }
+        #endregion
+
+        #region Methods
+        /// <summary>
+        /// Process.
+        /// </summary>
+        public void Prcs() => AvailableValues = string.IsNullOrWhiteSpace(Value) ? new List<string>(BASE_NUMS) : new List<string>();
         #endregion
     }
 }
